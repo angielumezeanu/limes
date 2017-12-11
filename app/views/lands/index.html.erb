@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="caption">Lands</h1>
+<%= link_to 'New Land Use', new_land_path %><br/><br/>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+      <th>Land Use</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lands.each do |land| %>
+      <tr>
+        <td><%= link_to 'Show', land %></td>
+        <td><%= link_to 'Edit', edit_land_path(land) %></td>
+        <td><%= link_to 'Destroy', land, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= land.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'New Land Use', new_land_path %>
+

@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="caption">Monument Protection</h1>
+<%= link_to 'New Monument Protection', new_monument_path %><br/><br/>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+      <th>Protection</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @monuments.each do |monument| %>
+      <tr>
+        <td><%= link_to 'Show', monument %></td>
+        <td><%= link_to 'Edit', edit_monument_path(monument) %></td>
+        <td><%= link_to 'Destroy', monument, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= monument.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Monument Protection', new_monument_path %>

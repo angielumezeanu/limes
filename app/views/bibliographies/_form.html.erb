@@ -1,0 +1,27 @@
+<%= form_with(model: bibliography, local: true) do |form| %>
+  <% if bibliography.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bibliography.errors.count, "error") %> prohibited this record from being saved:</h2>
+
+      <ul>
+      <% bibliography.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    Abbreviation<br/>
+    <%= form.text_field :abbreviation, id: :bibliography_abbreviation %>
+  </div>
+
+  <div class="field">
+    Title<br/>
+    <%= form.text_field :title, id: :bibliography_title %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Save"%>
+  </div>
+<% end %>

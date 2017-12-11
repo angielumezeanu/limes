@@ -1,0 +1,22 @@
+<%= form_with(model: saccess, local: true) do |form| %>
+  <% if saccess.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(saccess.errors.count, "error") %> prohibited this record from being saved:</h2>
+
+      <ul>
+      <% saccess.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    Accessibility<br/>
+    <%= form.text_field :name, id: :saccess_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Save"%>
+  </div>
+<% end %>

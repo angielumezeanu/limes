@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="caption">Coordinates</h1>
+<%= link_to 'New Coordinate', new_coordinate_path %><br/>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+      <th>Site Code</th>
+      <th>Latitude WGS84</th>
+      <th>Longitude WGS84</th>
+      <th>Latitude Stereo70</th>
+      <th>Longitude Stereo70</th>
+      <th>Height</th>
+      <th>Ctype</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @coordinates.each do |coordinate| %>
+      <tr>
+        <td><%= link_to 'Show', coordinate %></td>
+        <td><%= link_to 'Edit', edit_coordinate_path(coordinate) %></td>
+        <td><%= link_to 'Destroy', coordinate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><% unless coordinate.sector.blank? %><%=h coordinate.sector.code %> <% end %></td>
+        <td><%= coordinate.xdegree %>°<%= coordinate.xmin %>'<%= coordinate.xsec %>"</td>
+        <td><%= coordinate.ydegree %>°<%= coordinate.ymin %>'<%= coordinate.ysec %>"</td>
+        <td><%= coordinate.xstereo %></td>
+        <td><%= coordinate.ystereo %></td>
+        <td><%= coordinate.height %></td>
+        <td><%= coordinate.ctype %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Coordinate', new_coordinate_path %>

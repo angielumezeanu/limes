@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<div id="info">
+<p>
+  <strong>Abbreviation:</strong>
+  <%= @bibliography.abbreviation %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @bibliography.title %>
+</p>
+</div>
+
+<%= link_to 'Edit', edit_bibliography_path(@bibliography) %> |
+<%= link_to 'Back', bibliographies_path %>

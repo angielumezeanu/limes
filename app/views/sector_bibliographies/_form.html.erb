@@ -1,0 +1,32 @@
+<%= form_with(model: sector_bibliography, local: true) do |form| %>
+  <% if sector_bibliography.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sector_bibliography.errors.count, "error") %> prohibited this sector_bibliography from being saved:</h2>
+
+      <ul>
+      <% sector_bibliography.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :sector_id %>
+    <%= form.text_field :sector_id, id: :sector_bibliography_sector_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bibliography_id %>
+    <%= form.text_field :bibliography_id, id: :sector_bibliography_bibliography_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :page %>
+    <%= form.text_field :page, id: :sector_bibliography_page %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

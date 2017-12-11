@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<div id ="info">
+<p>
+  <strong>Site Type:</strong>
+  <%= @component.name %>
+</p>
+</div>
+
+<%= link_to 'Edit', edit_component_path(@component) %> |
+<%= link_to 'Back', components_path %>

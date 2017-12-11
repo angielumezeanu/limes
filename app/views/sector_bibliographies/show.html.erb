@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sector:</strong>
+  <%= @sector_bibliography.sector %>
+</p>
+
+<p>
+  <strong>Bibliography:</strong>
+  <%= @sector_bibliography.bibliography %>
+</p>
+
+<p>
+  <strong>Page:</strong>
+  <%= @sector_bibliography.page %>
+</p>
+
+<%= link_to 'Edit', edit_sector_bibliography_path(@sector_bibliography) %> |
+<%= link_to 'Back', sector_bibliographies_path %>

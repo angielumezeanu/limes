@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+<div id="info">
+
+<p>
+  <strong>Site code:</strong>
+  <% unless @photo.sector.blank? %><%=h @photo.sector.code %> <% end %>
+</p>
+
+<p>
+  <strong>Image type:</strong>
+  <%= @photo.imag_type %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @photo.description %>
+</p>
+
+<p><strong>Image:</strong> <br/>
+  <%=link_to image_tag(@photo.image.url(:thumbnail)), @photo.image.url(:original), :popup=>['original_image'], :target => '_blank' %>
+</p>
+</div>
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>

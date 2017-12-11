@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="caption">List of Sites</h1>
+
+<%= link_to 'New Site Record', new_sector_path %><br/><br/>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+      <th>Id</th>
+      <th>RAN Code</th>
+      <th>LMI Code</th>
+      <th>Siruta Code</th>
+      <th>Site name</th>
+      <th>Site Category </th>
+      <th>Site Type</th>
+      <th>Country</th>
+      <th>Locality</th>
+      <th>Commune</th>
+      <th>County</th>
+      <th>Toponym</th>
+      <th>Autor</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sectors.each do |sector| %>
+      <tr>
+        <td><%= link_to 'Show', sector, 'data-no-turbolink' => true %></td>
+        <td><%= link_to 'Edit', edit_sector_path(sector) %></td>
+        <td><%= link_to 'Destroy', sector, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= sector.code %></td>
+        <td><%= sector.ran %></td>
+        <td><%= sector.lmi %></td>
+        <td><%= sector.siruta %></td>
+        <td><%= sector.name %></td>
+        <td><%= sector.site_categ %></td>
+        <td><%= sector.site_type %></td>
+        <td><%= sector.country %></td>
+        <td><%= sector.village %></td>
+        <td><%= sector.locality %></td>
+        <td><% unless sector.county.blank? %><%=h sector.county.name %> <% end %></td>
+        <td><%= sector.point %></td>
+        <td><%= sector.author %></td>
+        <td><%= sector.created_at.strftime("%d/%m/%Y %H:%M") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Site Record', new_sector_path %>

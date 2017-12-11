@@ -1,0 +1,22 @@
+<%= form_with(model: scategory, local: true) do |form| %>
+  <% if scategory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(scategory.errors.count, "error") %> prohibited this record from being saved:</h2>
+
+      <ul>
+      <% scategory.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    Site Category
+    <%= form.text_field :name, id: :scategory_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Save"%>
+  </div>
+<% end %>

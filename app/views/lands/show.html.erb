@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+<div id="info">
+
+<p>
+  <strong>Land Use:</strong>
+  <%= @land.name %>
+</p>
+</div>
+
+<%= link_to 'Edit', edit_land_path(@land) %> |
+<%= link_to 'Back', lands_path %>

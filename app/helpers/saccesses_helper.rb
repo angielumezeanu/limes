@@ -1,0 +1,2 @@
+module SaccessesHelper
+end

@@ -1,0 +1,42 @@
+<%= form_with(model: photo, local: true) do |form| %>
+  <% if photo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(photo.errors.count, "error") %> prohibited this record from being saved:</h2>
+
+      <ul>
+      <% photo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    Site Code<br/>
+    <%= collection_select(:photo, :sector_id, Sector.all, :id, :code, options ={:include_blank => "Select"}, {:class=>''}) %>
+  </div>
+
+  <div class="field">
+    Image type(photo, plan, drawing)<br/>
+    <%= form.text_field :imag_type, id: :photo_imag_type %>
+  </div>
+
+  <div class="field">
+    Description<br/>
+    <%= form.text_field :description, id: :photo_description %>
+  </div>
+
+    <div class="field"> Image <br/>
+      <%= form.file_field :image %> <br/>
+
+      <%- unless @photo.new_record? || !@photo.image? -%><br/>
+          <%= form.check_box :image_delete, :label => 'Sterge imaginea' %>Delete image
+      <%- end -%>
+
+      <% unless @photo.image.blank? %><%= image_tag @photo.image.url(:thumbnail) %><% end %>
+    </div>
+
+    <div class="actions">
+    <%= form.submit "Save"%>
+  </div>
+<% end %>

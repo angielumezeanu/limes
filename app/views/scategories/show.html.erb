@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<div id="info">
+<p>
+  <strong>Site Category:</strong>
+  <%= @scategory.name %>
+</p>
+</div>
+
+<%= link_to 'Edit', edit_scategory_path(@scategory) %> |
+<%= link_to 'Back', scategories_path %>

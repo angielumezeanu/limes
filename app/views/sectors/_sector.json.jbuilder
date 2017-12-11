@@ -1,0 +1,2 @@
+json.extract! sector, :id, :locality, :village, :county_id, :type, :name, :point, :length, :tower, :institution, :lmi, :map_code, :coordinate_id, :d_length, :d_width, :d_height, :d_o, :d_type, :area, :description, :soil_type, :chronology, :preservation, :component_id, :form, :location, :access, :risk, :archaeology, :pat_value, :remark, :polygon, :author, :created_at, :updated_at
+json.url sector_url(sector, format: :json)

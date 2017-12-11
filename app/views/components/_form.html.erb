@@ -1,0 +1,22 @@
+<%= form_with(model: component, local: true) do |form| %>
+  <% if component.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(component.errors.count, "error") %> prohibited this record from being saved:</h2>
+
+      <ul>
+      <% component.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    Site Type<br/>
+    <%= form.text_field :name, id: :component_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Save"%>
+  </div>
+<% end %>

@@ -1,0 +1,348 @@
+<%= form_with(model: sector, local: true) do |form| %>
+  <% if sector.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sector.errors.count, "error") %> prohibited this record from being saved:</h2>
+
+      <ul>
+      <% sector.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div id ="info">
+      <h2>Identification Data</h2>
+
+      <div class="field">
+        Id<br/>
+        <%= form.text_field :code, id: :sector_code %>
+      </div>
+      <div class="field">
+        RAN code<br/>
+        <%= form.text_field :ran, id: :sector_ran %>
+      </div>
+      <div class="field">
+        LMI code<br/>
+        <%= form.text_field :lmi, id: :sector_lmi %>
+      </div>
+      <div class="field">
+        Siruta code<br/>
+        <%= form.text_field :siruta, id: :sector_siruta %>
+      </div>
+      <div class="field">
+        Site name<br/>
+        <%= form.text_field :name, id: :sector_name %>
+      </div>
+      <div class="field">
+        Site category <br/>
+        <%= collection_select(:sector, :scategory_id, Scategory.all, :id, :name, options ={:include_blank => "Select"}, {:class=>''}) %>
+      </div>
+      <div class="field">
+        Site type  <br/>
+        <%= collection_select(:sector, :component_id, Component.all, :id, :name, options ={:include_blank => "Select"}, {:class=>''}) %>
+      </div>
+
+      <div class="field">
+        Coordonate<br/>
+        <%= form.text_field :coordinate_id, id: :sector_coordinate_id %>
+      </div>
+
+      <div class="field">
+        Cod Map/Orthophoto plan code
+        <%= form.text_field :map_code, id: :sector_map_code %>
+      </div>
+    </div>
+
+    <div id="info">
+      <h2>Administrative Data</h2>
+      <div class="field">
+        Locality<br/>
+        <%= form.text_field :village, id: :sector_village %>
+      </div>
+
+  <div class="field">
+    Commune<br/>
+    <%= form.text_field :locality, id: :sector_locality %>
+  </div>
+
+  <div class="field">
+    County<br/>
+    <%= collection_select(:sector, :county_id, County.all, :id, :name, options ={:include_blank => "Select"}, {:class=>''}) %>
+  </div>
+
+  <div class="field">
+    Point (toponym)<br/>
+    <%= form.text_field :point, id: :sector_point %>
+  </div>
+
+      <div class="field">
+        Address<br/>
+        <%= form.text_field :address, id: :sector_address %>
+      </div>
+      <div class="field">
+        Ownership<br/>
+        <%= form.text_field :property, id: :sector_property %>
+      </div>
+      <div class="field">
+        Owner<br/>
+        <%= form.text_field :owner, id: :sector_owner %>
+      </div>
+
+      <div class="field">
+        Topographical no.<br/>
+        <%= form.text_field :topo, id: :sector_topo %>
+      </div>
+
+      <div class="field">
+        Cadastral lot<br/>
+        <%= form.text_field :cadastral, id: :sector_cadastral %>
+      </div>
+
+      <div class="field">
+        Institution in charge of Sector <br/>
+        <%= collection_select(:sector, :sect_responsible, Sector::Institution, :to_s, :upcase, options ={:include_blank => "Select"}, {:class=>''}) %>
+      </div>
+
+  <div class="field">
+    Institution un charge<br/>
+    <%= form.text_field :institution, id: :sector_institution %>
+  </div>
+
+    </div>
+    <div id="info">
+      <h2>Measurements</h2>
+
+      <div class="field">
+       Area<br/>
+        <%= form.text_field :area, id: :sector_area %>
+      </div>
+      <div class="field">
+        Measurements<br/>
+        <%= collection_select(:sector, :d_type, Sector::DType, :to_s, :humanize, options ={:include_blank => "Select"}, {:class=>''}) %>
+      </div>
+
+  <div class="field">
+    Length<br/>
+    <%= form.text_field :d_length, id: :sector_d_length %>
+  </div>
+
+  <div class="field">
+    Width<br/>
+    <%= form.text_field :d_width, id: :sector_d_width %>
+  </div>
+
+  <div class="field">
+    Height<br/>
+    <%= form.text_field :d_height, id: :sector_d_height %>
+  </div>
+
+  <div class="field">
+    Diameter<br/>
+    <%= form.text_field :d_o, id: :sector_d_o %>
+  </div>
+      <div class="field">
+    Description<br/>
+    <%= form.text_area :description, id: :sector_description %>
+  </div>
+    </div>
+    <div id="info">
+      <h2>General Data</h2>
+      <div class="field">
+        Dating<br/>
+        <%= form.text_field :chronology, id: :sector_chronology %>
+      </div>
+      <div class="field">
+        Land form<br/>
+        <%= form.text_field :relief, id: :sector_relief %>
+      </div>
+      <div class="field">
+        River basin<br/>
+        <%= form.text_field :river, id: :sector_river %>
+      </div>
+      <div class="field">
+        Stratigraphy <br/>
+        <%= form.text_field :stratigraphy, id: :sector_stratigraphy %>
+      </div>
+      <div class="field">
+        Vegetation/Soil<br/>
+        <%= collection_select(:sector, :soil_type, Sector::Soil, :to_s, :humanize, options ={:include_blank => "Select"}, {:class=>''}) %>
+      </div>
+      <div class="field">
+        Preservation Status<br/>
+        <%= select_tag 'sector[preservation_ids][]', options_from_collection_for_select(Preservation.order('name'), "id", "name"), {:prompt => "Select", :multiple=>true, class: 'chosen-select'}  %>
+      </div>
+      <div class="field">
+        Research<br/>
+        <%= form.text_field :research, id: :sector_research %>
+      </div>
+
+    </div>
+    <div id="info">
+      <h2>Factors affecting the component part</h2>
+      <h3>Naturals</h3>
+
+      <div class="field">
+        Earthquake<br/>
+        <%= collection_select(:sector, :earthquake, Sector::Risk, :to_s, :humanize, options ={:include_blank => "Select"}, {:class=>''}) %>
+      </div>
+      <div class="field">
+        Floods<br/>
+        <%= collection_select(:sector, :flood, Sector::Risk, :to_s, :humanize, options ={:include_blank => "Select"}, {:class=>''}) %>
+      </div>
+      <div class="field">
+        Wild Fire<br/>
+        <%= collection_select(:sector, :fire, Sector::Risk, :to_s, :humanize, options ={:include_blank => "Select"}, {:class=>''}) %>
+      </div>
+      <div class="field">
+        Animals<br/>
+        <%= collection_select(:sector, :animal, Sector::Risk, :to_s, :humanize, options ={:include_blank => "Select"}, {:class=>''}) %>
+      </div>
+      <div class="field">
+        Insects<br/>
+        <%= collection_select(:sector, :insect, Sector::Risk, :to_s, :humanize, options ={:include_blank => "Select"}, {:class=>''}) %>
+      </div>
+      <div class="field">
+        Storms<br/>
+        <%= collection_select(:sector, :storm, Sector::Risk, :to_s, :humanize, options ={:include_blank => "Select"}, {:class=>''}) %>
+      </div>
+      <div class="field">
+        Water logged soil<br/>
+        <%= collection_select(:sector, :water, Sector::Risk, :to_s, :humanize, options ={:include_blank => "Select"}, {:class=>''}) %>
+      </div>
+      <div class="field">
+        Landslide<br/>
+        <%= collection_select(:sector, :landslide, Sector::Risk, :to_s, :humanize, options ={:include_blank => "Select"}, {:class=>''}) %>
+      </div>
+      <div class="field">
+        High salinity soil<br/>
+        <%= collection_select(:sector, :salt, Sector::Risk, :to_s, :humanize, options ={:include_blank => "Select"}, {:class=>''}) %>
+      </div>
+      <div class="field">
+        Acidic soil<br/>
+        <%= collection_select(:sector, :acid, Sector::Risk, :to_s, :humanize, options ={:include_blank => "Select"}, {:class=>''}) %>
+      </div>
+  <h3>Anthropogenic</h3>
+      <div class="field">
+        Demolitions<br/>
+        <%= collection_select(:sector, :demolition, Sector::Risk, :to_s, :humanize, options ={:include_blank => "Select"}, {:class=>''}) %>
+      </div>
+      <div class="field">
+        Partially affected<br/>
+        <%= collection_select(:sector, :partial, Sector::Risk, :to_s, :humanize, options ={:include_blank => "Select"}, {:class=>''}) %>
+      </div>
+      <div class="field">
+        Vandalism<br/>
+        <%= collection_select(:sector, :vandalism, Sector::Risk, :to_s, :humanize, options ={:include_blank => "Select"}, {:class=>''}) %>
+      </div>
+      <div class="field">
+        Thefts<br/>
+        <%= collection_select(:sector, :theft, Sector::Risk, :to_s, :humanize, options ={:include_blank => "Select"}, {:class=>''}) %>
+      </div>
+      <div class="field">
+        Arsons<br/>
+        <%= collection_select(:sector, :arson, Sector::Risk, :to_s, :humanize, options ={:include_blank => "Select"}, {:class=>''}) %>
+      </div>
+      <div class="field">
+        Agricultural work<br/>
+        <%= collection_select(:sector, :agriculture, Sector::Risk, :to_s, :humanize, options ={:include_blank => "Select"}, {:class=>''}) %>
+      </div>
+      <div class="field">
+       Forestry work<br/>
+        <%= collection_select(:sector, :forest, Sector::Risk, :to_s, :humanize, options ={:include_blank => "Select"}, {:class=>''}) %>
+      </div>
+    </div>
+    <div id="info">
+      <h2>Perimeter and protection zone</h2>
+      <div class="field">
+        North demarcation<br/>
+        <%= form.text_field :d_north, id: :sector_d_north %>
+      </div>
+      <div class="field">
+        East demarcation<br/>
+        <%= form.text_field :d_east, id: :sector_d_east %>
+      </div>
+      <div class="field">
+        South demarcation<br/>
+        <%= form.text_field :d_south, id: :sector_d_south %>
+      </div>
+
+      <div class="field">
+        West demarcation<br/>
+        <%= form.text_field :d_west, id: :sector_d_west %>
+      </div>
+      <div class="field">
+       Monument protection<br/>
+        <%= select_tag 'sector[monument_ids][]', options_from_collection_for_select(Monument.order('name'), "id", "name"), {:prompt => "Select", :multiple=>true, class: 'chosen-select'}  %>
+      </div>
+      <div class="field">
+        National Monument protection Law<br/>
+        <%= form.text_field :national, id: :sector_national %>
+      </div>
+      <div class="field">
+        Plannning tools<br/>
+        <%= form.text_field :urbanism, id: :sector_urbanism %>
+      </div>
+      <div class="field">
+        Other laws and instruments<br/>
+        <%= form.text_field :other, id: :sector_other %>
+      </div>
+      <div class="field">
+        Land Use<br/>
+        <%= select_tag 'sector[land_ids][]', options_from_collection_for_select(Land.order('name'), "id", "name"), {:prompt => "Select", :multiple=>true, class: 'chosen-select'}  %>
+      </div>
+      <div class="field">
+        Accesibility<br/>
+        <%= select_tag 'sector[saccess_ids][]', options_from_collection_for_select(Saccess.order('name'), "id", "name"), {:prompt => "Select", :multiple=>true, class: 'chosen-select'}  %>
+      </div>
+    </div>
+    <div id="info">
+      <h2>Arheologie</h2>
+      <div class="field">
+        Restorations<br/>
+        <%= form.text_field :restoration, id: :sector_restoration %>
+      </div>
+      <div class="field">
+        Geophysics<br/>
+        <%= form.text_field :geophysics, id: :sector_geophysics %>
+      </div>
+      <div class="field">
+        Finds<br/>
+        <%= form.text_field :discovery, id: :sector_discovery %>
+      </div>
+      <div class="field">
+        History of archaeological research<br/>
+        <%= form.text_field :archaeology, id: :sector_archaeology %>
+      </div>
+      <div class="field">
+        Heritage Value<br/>
+        <%= form.text_field :pat_value, id: :sector_pat_value %>
+      </div>
+
+  <div class="field">
+    Remarks<br/>
+    <%= form.text_area :remark, id: :sector_remark %>
+  </div>
+    </div>
+    <div id="info">
+      <h2>Bibliography</h2>
+    <div class="field">
+      Bibliography<br/>
+      <%= select_tag 'sector[bibliography_ids][]', options_from_collection_for_select(Bibliography.order('abbreviation'), "id", "abbreviation"), {:prompt => "Select", :multiple=>true, class: 'chosen-select'}  %>
+    </div>
+    </div>
+
+  <div class="actions">
+    <%= form.submit "Save" %>
+  </div>
+<% end %>
+
+
+<script>
+    $('.chosen-select').hide().chosen({
+        allow_single_deselect: true,
+        no_results_text: 'No results matched',
+        width: '200px',
+        height: '200px'
+    });
+</script>

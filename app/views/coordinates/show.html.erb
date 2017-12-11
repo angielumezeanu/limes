@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+<div id="info">
+
+<p>
+  <h3>Latitude:</h3>
+<strong>WGS84:</strong>
+  <%= @coordinate.xdegree %>°<%= @coordinate.xmin %>'<%= @coordinate.xsec %>"<br/>
+<strong>Decimal:</strong>
+  <%= @coordinate.x %><br/>
+<strong>Stereo70:</strong>
+<%= @coordinate.xstereo %>
+</p>
+
+<p>
+  <h3>Longitude:</h3>
+  <strong>WGS84:</strong>
+  <%= @coordinate.ydegree %>°<%= @coordinate.ymin %>'<%= @coordinate.ysec %>"<br/>
+<strong>Decimal:</strong>
+<%= @coordinate.y %><br/>
+<strong>Stereo70:</strong>
+<%= @coordinate.ystereo %>
+</p>
+
+<p>
+  <h3>Height:</h3>
+  <%= @coordinate.height %>
+</p>
+
+<p>
+  <h3>Coordinate type:</h3>
+  <%= @coordinate.ctype %>
+</p>
+</div>
+
+<%= link_to 'Edit', edit_coordinate_path(@coordinate) %> |
+<%= link_to 'Back', coordinates_path %>

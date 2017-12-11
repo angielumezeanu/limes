@@ -1,0 +1,42 @@
+class AddFieldsToSector < ActiveRecord::Migration[5.1]
+  def change
+    add_column :sectors, :code, :string
+    add_column :sectors, :ran, :string
+    add_column :sectors, :siruta, :string
+    add_column :sectors, :property, :string
+    add_column :sectors, :owner, :string
+    add_column :sectors, :address, :string
+    add_column :sectors, :cadastral, :string
+    add_column :sectors, :topo, :string
+    add_column :sectors, :site_categ, :string
+    add_column :sectors, :relief, :string
+    add_column :sectors, :river, :string
+    add_column :sectors, :stratigraphy, :string
+    add_column :sectors, :research, :string
+    add_column :sectors, :d_east, :string
+    add_column :sectors, :d_west, :string
+    add_column :sectors, :d_north, :string
+    add_column :sectors, :d_south, :string
+    add_column :sectors, :flood, :string
+    add_column :sectors, :rain, :string
+    add_column :sectors, :fire, :string
+    add_column :sectors, :animal, :string
+    add_column :sectors, :insect, :string
+    add_column :sectors, :storm, :string
+    add_column :sectors, :water, :string
+    add_column :sectors, :earthquake, :string
+    add_column :sectors, :landslide, :string
+    add_column :sectors, :salt, :string
+    add_column :sectors, :acid, :string
+    add_column :sectors, :demolition, :string
+    add_column :sectors, :partial, :string
+    add_column :sectors, :vandalism, :string
+    add_column :sectors, :theft, :string
+    add_column :sectors, :arson, :string
+    add_column :sectors, :research_type, :string
+    add_column :sectors, :geophysics, :string
+    add_column :sectors, :restoration, :string
+    add_column :sectors, :sect_responsible, :string
+    add_column :sectors, :discovery, :string
+  end
+end

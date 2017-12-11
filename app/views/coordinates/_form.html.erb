@@ -1,0 +1,57 @@
+<%= form_with(model: coordinate, local: true) do |form| %>
+  <% if coordinate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(coordinate.errors.count, "error") %> prohibited this record from being saved:</h2>
+
+      <ul>
+      <% coordinate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div id="info">
+
+      <div class="field">
+        Site Code<br/>
+        <%= collection_select(:coordinate, :sector_id, Sector.all, :id, :code, options ={:include_blank => "Select"}, {:class=>''}) %>
+      </div>
+
+  <div class="field">
+    Latitude<br/>
+    <%= form.text_field :xdegree, id: :coordinate_xdegree, :placeholder=>"Degree", :class=>"coord"%>° <%= form.text_field :xmin, id: :coordinate_xmin, :placeholder=>"Minutes", :class=>"coord" %>'
+    <%= form.text_field :xsec, id: :coordinate_xsec, :placeholder=>"Seconds", :class=>"coord" %>"
+  </div>
+
+  <div class="field">
+    Longitude<br/>
+    <%= form.text_field :ydegree, id: :coordinate_ydegree, :placeholder=>"Degree", :class=>"coord" %>° <%= form.text_field :ymin, id: :coordinate_ymin, :placeholder=>"Minutes", :class=>"coord" %>'
+    <%= form.text_field :ysec, id: :coordinate_ysec, :placeholder=>"Seconds", :class=>"coord" %>"
+  </div>
+
+    <div class="field">
+     Latitude(stereo70)<br/>
+      <%= form.text_field :xstereo, id: :coordinate_xstereo %>
+    </div>
+    <div class="field">
+      Longitude(stereo70)<br/>
+      <%= form.text_field :ystereo, id: :coordinate_ystereo %>
+    </div>
+
+  <div class="field">
+    Height<br/>
+    <%= form.text_field :height, id: :coordinate_height %>
+  </div>
+
+  <div class="field">
+    Coordinate Type<br/>
+    <%= collection_select(:coordinate, :ctype, Coordinate::CoordinateType, :to_s, :humanize, options ={:include_blank => "Select"}, {:class=>''}) %>
+
+  </div>
+    </div>
+
+    <div class="actions">
+    <%= form.submit "Save"%>
+  </div>
+<% end %>

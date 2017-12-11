@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="caption">Accessibility</h1>
+<%= link_to 'New Accessibility Entry', new_saccess_path %><br/><br/>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+      <th>Accessibility</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @saccesses.each do |saccess| %>
+      <tr>
+        <td><%= link_to 'Show', saccess %></td>
+        <td><%= link_to 'Edit', edit_saccess_path(saccess) %></td>
+        <td><%= link_to 'Destroy', saccess, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= saccess.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Accessibility Entry', new_saccess_path %>

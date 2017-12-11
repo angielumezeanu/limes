@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<div id="info">
+<p>
+  <strong>Preservation Status:</strong>
+  <%= @preservation.name %>
+</p>
+</div>
+
+<%= link_to 'Edit', edit_preservation_path(@preservation) %> |
+<%= link_to 'Back', preservations_path %>

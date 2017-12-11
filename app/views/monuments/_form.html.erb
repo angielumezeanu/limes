@@ -1,0 +1,22 @@
+<%= form_with(model: monument, local: true) do |form| %>
+  <% if monument.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(monument.errors.count, "error") %> prohibited this record from being saved:</h2>
+
+      <ul>
+      <% monument.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    Protection<br/>
+    <%= form.text_field :name, id: :monument_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Save"%>
+  </div>
+<% end %>

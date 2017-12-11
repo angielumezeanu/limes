@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Limes</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header>
+    <div class="login" >
+      <% if user_signed_in? -%>
+          <div id="user_login_box" style="float:right">
+            Logged in as <%= current_user.email %> |
+            <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, :class=>"userlink" %>
+          </div>
+      <% else %>
+          <%= link_to 'Sign in', new_user_session_path, :class=>"userlink" %>
+      <% end -%> <br>
+      <%- flash.each do |name, msg| -%>
+          <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+      <%- end -%>
+    </div>
+
+    <div>
+      <ul id="HDropdown-orange-classic" data-no-turbolink>
+      <li ><%= link_to "Site", sectors_path %></li>
+        <li><%= link_to "Coordinate", coordinates_path %></li>
+        <li><%= link_to "Photos", photos_path %></li>
+        <li><%= link_to "Bibliography", bibliographies_path %></li>
+        <li><%= link_to "Users", users_path %></li>
+        <li><a href="#">Auxiliary Tables</a>
+        <ul>
+          <li><%= link_to "County", counties_path %></li>
+          <li><%= link_to "Site Type", components_path %></li>
+          <li><%= link_to "Site Category", scategories_path %></li>
+          <li><%= link_to "Preservation", preservations_path %></li>
+          <li><%= link_to "Monument protection", monuments_path %></li>
+          <li><%= link_to "Land Use", lands_path %></li>
+          <li><%= link_to "Accessibility", saccesses_path %></li>
+        </ul>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+
+    <%= yield %>
+  </body>
+</html>
