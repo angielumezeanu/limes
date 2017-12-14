@@ -141,7 +141,7 @@ input[type="checkbox"]{
 }
 
 input[type="text"].coord {
-    width: 30px; !important;
+    width: 30px;
 }
 
 .login {
@@ -214,7 +214,6 @@ header {
 #HDropdown-orange-classic li ul {
     margin:0;
     padding:0 5px 0 0;
-    line-height:none;
     position:absolute;
     top:29px;
     left:0;
