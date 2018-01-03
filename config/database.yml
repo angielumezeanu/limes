@@ -52,6 +52,6 @@ test:
 #
 production:
   <<: *default
-  database: limes_production
+  database: limes_development
   username: limes
   password: cluj2017
