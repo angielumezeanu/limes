@@ -42,12 +42,6 @@
         Site type  <br/>
         <%= collection_select(:sector, :component_id, Component.all, :id, :name, options ={:include_blank => "Select"}, {:class=>''}) %>
       </div>
-
-      <div class="field">
-        Coordonate<br/>
-        <%= form.text_field :coordinate_id, id: :sector_coordinate_id %>
-      </div>
-
       <div class="field">
         Cod Map/Orthophoto plan code
         <%= form.text_field :map_code, id: :sector_map_code %>
