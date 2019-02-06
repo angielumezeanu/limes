@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f11c519-ce32-4eb3-812c-c279fb919021" name="Default" comment="" />
+    <list default="true" id="8f11c519-ce32-4eb3-812c-c279fb919021" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -386,12 +388,12 @@
       <workItem from="1514967857005" duration="925000" />
       <workItem from="1515060870521" duration="6000" />
       <workItem from="1526459279356" duration="823000" />
-      <workItem from="1549445304479" duration="1758000" />
+      <workItem from="1549445304479" duration="2019000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112082000" />
+    <option name="totallyTimeSpent" value="112343000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="2495" height="1444" extended-state="6" />
