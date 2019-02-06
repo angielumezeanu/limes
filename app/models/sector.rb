@@ -11,11 +11,11 @@ class Sector < ApplicationRecord
   has_and_belongs_to_many :lands, :join_table => :land_sectors
   has_and_belongs_to_many :saccesses, :join_table => :acces_sectors
 
-  DType = %w[sigure presupuse partial_distrus distrus]
+  DType = %w[confirmed presumed partially_destroyed destroyed]
 
-  Soil = %w[zona_construita padure pasune teren_arabil]
+  Soil = %w[settlement forest grassland agricultural_land]
 
-  Preservation = %w[conservat neconservat partial_distrus distrus]
+  Preservation = %w[preserved unpreserved partially_destroyed destroyed]
 
   Risk = %w[1 2 3 4 5]
 

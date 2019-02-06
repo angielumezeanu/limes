@@ -1,7 +1,7 @@
 <%= form_with(model: sector_bibliography, local: true) do |form| %>
   <% if sector_bibliography.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(sector_bibliography.errors.count, "error") %> prohibited this sector_bibliography from being saved:</h2>
+      <h2><%= pluralize(sector_bibliography.errors.count, "error") %> prohibited this record from being saved:</h2>
 
       <ul>
       <% sector_bibliography.errors.full_messages.each do |message| %>
@@ -27,6 +27,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Save" %>
   </div>
 <% end %>
