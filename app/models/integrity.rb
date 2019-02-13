@@ -1,0 +1,2 @@
+class Integrity < ApplicationRecord
+end

@@ -102,6 +102,9 @@ class SectorsController < ApplicationController
                                      :pat_value, :remark, :polygon, :author, :code, :ran,  :siruta, :property, :owner, :address, :cadastral, :topo, :site_categ, :relief, :river,
                                      :stratigraphy, :research, :d_east, :d_west, :d_north, :d_south, :flood, :rain, :fire, :animal, :insect, :storm, :water, :earthquake, :landslide,
                                      :salt, :acid, :demolition, :partial, :vandalism, :theft, :arson, :research_type, :geophysics, :restoration, :sect_responsible, :discovery, :scategory_id,
-                                     {:bibliography_ids=>[]}, {:preservation_ids=>[]}, {:monument_ids=>[]}, {:land_ids=>[]}, {:saccess_ids=>[]}, :national, :urbanism, :other, :agriculture, :forest)
+                                     {:bibliography_ids=>[]}, {:preservation_ids=>[]}, {:monument_ids=>[]}, {:land_ids=>[]}, {:saccess_ids=>[]}, :national, :urbanism, :other, :agriculture, :forest,
+                                     :buffer_area, :total_area, :wholeness_detail, :intactness_detail, :visintegrity_detail, :absthreats_detail, :substance, :construction_layout, :setting, :integrity,
+                                     :authenticity, :importance, :visitors_no, :capacity, :population, :buffer_population, :total_population, :pop_year, :entry_year, :document_no, :museum, :museum_obs,
+                                     :indicators, :mon_method, :mon_frequency, :mon_records, :whole_id, :intact_id, :integrity_id, :threat_id, :component_area)
     end
 end

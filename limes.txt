@@ -3,3 +3,37 @@ API Key
 AIzaSyBT8YfomN3I0pj0lv7cqib2t3esrnCutBo
 
 <script src="//maps.google.com/maps/api/js?v=3&key=AIzaSyBT8YfomN3I0pj0lv7cqib2t3esrnCutBo"></script>
+
+rails generate scaffold whole degree:string description:string
+
+rails generate scaffold intact degree:string description:string
+
+rails generate scaffold integrity degree:string description:string
+
+rails generate scaffold threat degree:string description:string
+
+
+rails generate migration AddMultipleFieldsToSector buffer_area:decimal total_area:decimal wholeness_detail:string intactness_detail:string visintegrity_detail:string absthreats_detail:string substance:string onstruction_layout:string setting:string integrity:string authenticity:string importance:string visitors_no:string capacity:string population:integer buffer_population:integer total_population:integer pop_year:integer entry_year:integer document_no:string museum:string museum_obs:text indicators:string mon_method:string mon_frequency:string mon_records:string whole:references intact:references integrity:references 
+threat:references
+
+
+rails generate migration AddSecondMultipleFieldsToSector mon_frequency:string mon_records:string whole:references intact:references integrity:references threat:references
+
+ALTER TABLE limes_development.sectors MODIFY earthquake VARCHAR(5);
+ALTER TABLE limes_development.sectors MODIFY flood VARCHAR(5);
+ALTER TABLE limes_development.sectors MODIFY fire VARCHAR(5);
+ALTER TABLE limes_development.sectors MODIFY animal VARCHAR(5);
+ALTER TABLE limes_development.sectors MODIFY insect VARCHAR(5);
+ALTER TABLE limes_development.sectors MODIFY storm VARCHAR(5);
+ALTER TABLE limes_development.sectors MODIFY water VARCHAR(5);
+ALTER TABLE limes_development.sectors MODIFY landslide VARCHAR(5);
+ALTER TABLE limes_development.sectors MODIFY salt VARCHAR(5);
+ALTER TABLE limes_development.sectors MODIFY acid VARCHAR(5);
+ALTER TABLE limes_development.sectors MODIFY demolition VARCHAR(5);
+ALTER TABLE limes_development.sectors MODIFY partial VARCHAR(5);
+ALTER TABLE limes_development.sectors MODIFY vandalism VARCHAR(5);
+ALTER TABLE limes_development.sectors MODIFY theft VARCHAR(5);
+ALTER TABLE limes_development.sectors MODIFY arson VARCHAR(5);
+ALTER TABLE limes_development.sectors MODIFY agriculture VARCHAR(5);
+ALTER TABLE limes_development.sectors MODIFY forest VARCHAR(5);
+

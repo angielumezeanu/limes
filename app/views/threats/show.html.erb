@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Degree:</strong>
+  <%= @threat.degree %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @threat.description %>
+</p>
+
+<%= link_to 'Edit', edit_threat_path(@threat) %> |
+<%= link_to 'Back', threats_path %>

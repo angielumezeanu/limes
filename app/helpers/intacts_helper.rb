@@ -1,0 +1,2 @@
+module IntactsHelper
+end

@@ -1,0 +1,27 @@
+<%= form_with(model: whole, local: true) do |form| %>
+  <% if whole.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(whole.errors.count, "error") %> prohibited this whole from being saved:</h2>
+
+      <ul>
+      <% whole.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    Degree of integrity<br/>
+    <%= form.text_field :degree, id: :whole_degree %>
+  </div>
+
+  <div class="field">
+    Wholness<br/>
+    <%= form.text_field :description, id: :whole_description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Save"%>
+  </div>
+<% end %>

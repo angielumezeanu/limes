@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Degree:</strong>
+  <%= @intact.degree %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @intact.description %>
+</p>
+
+<%= link_to 'Edit', edit_intact_path(@intact) %> |
+<%= link_to 'Back', intacts_path %>

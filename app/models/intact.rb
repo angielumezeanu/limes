@@ -1,0 +1,2 @@
+class Intact < ApplicationRecord
+end

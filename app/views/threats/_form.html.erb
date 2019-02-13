@@ -1,0 +1,27 @@
+<%= form_with(model: threat, local: true) do |form| %>
+  <% if threat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(threat.errors.count, "error") %> prohibited this threat from being saved:</h2>
+
+      <ul>
+      <% threat.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :degree %>
+    <%= form.text_field :degree, id: :threat_degree %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :threat_description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Integrities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Degree</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @integrities.each do |integrity| %>
+      <tr>
+        <td><%= integrity.degree %></td>
+        <td><%= integrity.description %></td>
+        <td><%= link_to 'Show', integrity %></td>
+        <td><%= link_to 'Edit', edit_integrity_path(integrity) %></td>
+        <td><%= link_to 'Destroy', integrity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Integrity', new_integrity_path %>

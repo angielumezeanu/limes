@@ -112,6 +112,18 @@
         <%= form.text_field :area, id: :sector_area %>
       </div>
       <div class="field">
+        Component area <br/>
+        <%= form.text_field :area, id: :component_area %>
+      </div>
+      <div class="field">
+        Buffer zone area<br/>
+        <%= form.text_field :area, id: :buffer_area %>
+      </div>
+      <div class="field">
+        Total area<br/>
+        <%= form.text_field :area, id: :total_area %>
+      </div>
+      <div class="field">
         Measurements<br/>
         <%= collection_select(:sector, :d_type, Sector::DType, :to_s, :humanize, options ={:include_blank => "Select"}, {:class=>''}) %>
       </div>
@@ -170,8 +182,44 @@
         Research<br/>
         <%= form.text_field :research, id: :sector_research %>
       </div>
-
     </div>
+
+      <div id="info">
+        <h2>Overview Integrity</h2>
+        <div class="field">
+          Wholeness degree<br/>
+          <%= collection_select(:sector, :whole_id, Whole.all, :id, :degree, options ={:include_blank => "Select"}, {:class=>''}) %>
+        </div>
+        <div class="field">
+          Wholeness <br/>
+          <%= form.text_field :wholeness_detail, id: :wholeness_detail %>
+        </div>
+        <div class="field">
+          Intactness degree<br/>
+          <%= collection_select(:sector, :intact_id, Intact.all, :id, :degree, options ={:include_blank => "Select"}, {:class=>''}) %>
+        </div>
+        <div class="field">
+          Intactness <br/>
+          <%= form.text_field :intactness_detail, id: :intactness_detail %>
+        </div>
+        <div class="field">
+          Visual-aesthetic integrity degree<br/>
+          <%= collection_select(:sector, :integrity_id, Integrity.all, :id, :degree, options ={:include_blank => "Select"}, {:class=>''}) %>
+        </div>
+        <div class="field">
+          Visual-aesthetic integrity <br/>
+          <%= form.text_field :visintegrity_detail, id: :visintegrity_detail %>
+        </div>
+        <div class="field">
+          Absence of threats degree<br/>
+          <%= collection_select(:sector, :threat_id, Threat.all, :id, :degree, options ={:include_blank => "Select"}, {:class=>''}) %>
+        </div>
+        <div class="field">
+          Absence of threats <br/>
+          <%= form.text_field :absthreats_detail, id: :absthreats_detail %>
+        </div>
+      </div>
+
     <div id="info">
       <h2>Factors affecting the component part</h2>
       <h3>Naturals</h3>
@@ -289,6 +337,14 @@
         Accesibility<br/>
         <%= select_tag 'sector[saccess_ids][]', options_from_collection_for_select(Saccess.order('name'), "id", "name"), {:prompt => "Select", :multiple=>true, class: 'chosen-select'}  %>
       </div>
+      <div class="field">
+        Construction and layout <br/>
+        <%= form.text_field :construction_layout, id: :construction_layout %>
+      </div>
+      <div class="field">
+        Location and setting <br/>
+        <%= form.text_field :setting, id: :setting %>
+      </div>
     </div>
     <div id="info">
       <h2>Archaeology</h2>
@@ -309,6 +365,10 @@
         <%= form.text_field :archaeology, id: :sector_archaeology %>
       </div>
       <div class="field">
+        Materials and substance <br/>
+        <%= form.text_field :substance, id: :substance %>
+      </div>
+      <div class="field">
         Heritage Value<br/>
         <%= form.text_field :pat_value, id: :sector_pat_value %>
       </div>
@@ -318,6 +378,25 @@
     <%= form.text_area :remark, id: :sector_remark %>
   </div>
     </div>
+  <div id="info">
+    <h2>Monitoring</h2>
+    <div class="field">
+      Indicators<br/>
+      <%= form.text_field :indicators, id: :indicators %>
+    </div>
+    <div class="field">
+      Method<br/>
+      <%= form.text_field :mon_method, id: :mon_method %>
+    </div>
+    <div class="field">
+      Frequency<br/>
+      <%= form.text_field :mon_frequency, id: :mon_frequency %>
+    </div>
+    <div class="field">
+      Local of the Records<br/>
+      <%= form.text_field :mon_records, id: :mon_records %>
+    </div>
+  </div>
     <div id="info">
       <h2>Bibliography</h2>
     <div class="field">

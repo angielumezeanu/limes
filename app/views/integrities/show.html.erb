@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Degree:</strong>
+  <%= @integrity.degree %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @integrity.description %>
+</p>
+
+<%= link_to 'Edit', edit_integrity_path(@integrity) %> |
+<%= link_to 'Back', integrities_path %>

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+ # resources :threats
+ # resources :integrities
+ # resources :intacts
+ # resources :wholes
   devise_for :users, :skip => [:sessions]
   as :user do
     get 'sign_in' => 'devise/sessions#new', :as => :new_user_session
