@@ -188,7 +188,7 @@
         <h2>Overview Integrity</h2>
         <div class="field">
           Wholeness degree<br/>
-          <%= collection_select(:sector, :whole_id, Whole.all, :id, :degree, options ={:include_blank => "Select"}, {:class=>''}) %>
+          <%= collection_select(:sector, :whole_id, Whole.all, :id, :full_description, options ={:include_blank => "Select"}, {:class=>''}) %>
         </div>
         <div class="field">
           Wholeness <br/>
@@ -196,7 +196,7 @@
         </div>
         <div class="field">
           Intactness degree<br/>
-          <%= collection_select(:sector, :intact_id, Intact.all, :id, :degree, options ={:include_blank => "Select"}, {:class=>''}) %>
+          <%= collection_select(:sector, :intact_id, Intact.all, :id, :full_description, options ={:include_blank => "Select"}, {:class=>''}) %>
         </div>
         <div class="field">
           Intactness <br/>
@@ -204,7 +204,7 @@
         </div>
         <div class="field">
           Visual-aesthetic integrity degree<br/>
-          <%= collection_select(:sector, :integrity_id, Integrity.all, :id, :degree, options ={:include_blank => "Select"}, {:class=>''}) %>
+          <%= collection_select(:sector, :integrity_id, Integrity.all, :id, :full_description, options ={:include_blank => "Select"}, {:class=>''}) %>
         </div>
         <div class="field">
           Visual-aesthetic integrity <br/>
@@ -212,7 +212,7 @@
         </div>
         <div class="field">
           Absence of threats degree<br/>
-          <%= collection_select(:sector, :threat_id, Threat.all, :id, :degree, options ={:include_blank => "Select"}, {:class=>''}) %>
+          <%= collection_select(:sector, :threat_id, Threat.all, :id, :full_description, options ={:include_blank => "Select"}, {:class=>''}) %>
         </div>
         <div class="field">
           Absence of threats <br/>
