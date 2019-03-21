@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190211100157) do
+ActiveRecord::Schema.define(version: 20190321092620) do
 
   create_table "acces_sectors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "saccess_id"
@@ -43,11 +43,11 @@ ActiveRecord::Schema.define(version: 20190211100157) do
     t.decimal "xstereo", precision: 15, scale: 10
     t.decimal "ystereo", precision: 15, scale: 10
     t.string "perimeter"
-    t.decimal "xdegree", precision: 15, scale: 10, default: "0.0", null: false
-    t.decimal "xmin", precision: 15, scale: 10, default: "0.0", null: false
+    t.integer "xdegree", default: 0, null: false
+    t.integer "xmin", default: 0, null: false
     t.decimal "xsec", precision: 15, scale: 10, default: "0.0", null: false
-    t.decimal "ydegree", precision: 15, scale: 10, default: "0.0", null: false
-    t.decimal "ymin", precision: 15, scale: 10, default: "0.0", null: false
+    t.integer "ydegree", default: 0, null: false
+    t.integer "ymin", default: 0, null: false
     t.decimal "ysec", precision: 15, scale: 10, default: "0.0", null: false
     t.index ["sector_id"], name: "fk_rails_c21f8410af"
   end
