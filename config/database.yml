@@ -13,9 +13,11 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: 193.226.5.180
+  #host: 193.226.5.180
+  host: 77.81.26.109
   username: limes
-  password: cluj2017
+  #password: cluj2017
+  password: Cluj2017?
   port: 3307
   socket: /var/run/mysqld/mysqld10.sock
   database: limes_development
@@ -54,4 +56,4 @@ production:
   <<: *default
   database: limes_development
   username: limes
-  password: cluj2017
+  password: Cluj2017?
