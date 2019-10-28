@@ -18,7 +18,7 @@ default: &default
   username: limes
   #password: cluj2017
   password: Cluj2017?
-  port: 3307
+  port: 3306
   socket: /var/run/mysqld/mysqld10.sock
   database: limes_development
 
